@@ -17,7 +17,7 @@ def GraphQLType(csharpType)
   end
 end
 
-File.open("sample.txt", "r") do |f|
+File.open("MockClass.cs", "r") do |f|
   f.each_line do |line|
      words = line.split
      name = words[2]
