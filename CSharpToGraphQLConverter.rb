@@ -17,14 +17,20 @@ def GraphQLType(csharpType)
   end
 end
 
-File.open("MockClass.cs", "r") do |f|
-  f.each_line do |line|
-     words = line.split
-     name = words[2]
-     type = words[1]
-    puts name + ": " + GraphQLType(type)
+
+
+file = File.read("MockClass.cs")
+file.scan(/public\s*([^\n\r]*)/) do |match|
+  words = match[0].split
+  graphName = words[1]
+  graphType = words[0]
+  if graphType != "class"
+    puts graphName + ": " + GraphQLType(graphType)
   end
 end
+
+
+
 
 
 

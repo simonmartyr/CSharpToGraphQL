@@ -1,12 +1,23 @@
-public int BuildingNumber { get; set; }
-public int ProtectionClass { get; set; }
-public string OccupancyName { get; set; }
-public string Construction { get; set; }
-public string YearBuilt { get; set; }
-public decimal FloorArea { get; set; }
-public int StoriesCount { get; set; }
-public bool CentralAlarm { get; set; }
-public decimal SprinklerPct { get; set; }
-public bool SprinklerAdequacy { get; set; }
-public decimal GrossGroundUpPremium { get; set; }
-public decimal NetFactor { get; set; }
+using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+
+namespace Test.Mock
+{
+  public class MockClass
+  {
+    public Guid MockID { get; set; }
+    [Required]
+    public string Name { get; set; }
+    [Required]
+    public Guid MockIDTwo { get; set; }
+    public string AString { get; set; }
+    public Guid MoreIDs { get; set; }
+    public DateTime DateOne { get; set; }
+    public DateTime DateTwo { get; set; }
+    public decimal BigNumber { get; set; }
+    public string SomeText { get; set; }
+  }
+}
