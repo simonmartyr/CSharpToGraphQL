@@ -9,13 +9,13 @@ Simple script to convert a given CSharp class into a GraphQL schema.
 ### Results: 
 
 ```
-MockID: ID
-Name: String
-MockIDTwo: ID
-AString: String
-MoreIDs: ID
-DateOne: String
-DateTwo: String
-BigNumber: Float
-SomeText: String
+mockID: ID
+name: String
+mockIDTwo: ID
+aString: String
+moreIDs: ID
+dateOne: String
+dateTwo: String
+bigNumber: Float
+someText: String
 ```

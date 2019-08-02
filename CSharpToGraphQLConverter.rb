@@ -6,8 +6,8 @@ def GraphQLType(csharpType)
     return "Int"
   when "STRING"
     return "String"
-  when "BOOLEAN"
-    return "Bool"
+  when "BOOL"
+    return "Boolean"
   when "DATETIME"
     return "String"
   when "GUID"
@@ -23,9 +23,12 @@ for arg in ARGV
   file.scan(/public\s*([^\n\r]*)/) do |match|
     words = match[0].split
     graphName = words[1]
+    graphName[0] = graphName[0].downcase
     graphType = words[0]
     if graphType != "class"
-      puts graphName + ": " + GraphQLType(graphType)
+      open('csharpResult.txt', 'a') do |f|
+        f.puts graphName + ": " + GraphQLType(graphType)
+      end
     end
   end
 end
